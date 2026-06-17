@@ -6,10 +6,35 @@
       "started_at": "2026-06-17T04:51:38.773Z",
       "parent_mode": "none",
       "status": "running"
+    },
+    {
+      "agent_id": "a3d7ef3b3351897bf",
+      "agent_type": "claude-code-guide",
+      "started_at": "2026-06-17T07:39:55.689Z",
+      "parent_mode": "none",
+      "status": "running"
+    },
+    {
+      "agent_id": "afa62f28fd1fe5816",
+      "agent_type": "oh-my-claudecode:architect",
+      "started_at": "2026-06-17T08:34:53.737Z",
+      "parent_mode": "none",
+      "status": "completed",
+      "completed_at": "2026-06-17T08:39:26.977Z",
+      "duration_ms": 273240
+    },
+    {
+      "agent_id": "a79ff001a054ba253",
+      "agent_type": "oh-my-claudecode:architect",
+      "started_at": "2026-06-17T08:41:43.875Z",
+      "parent_mode": "none",
+      "status": "completed",
+      "completed_at": "2026-06-17T08:43:29.273Z",
+      "duration_ms": 105398
     }
   ],
-  "total_spawned": 1,
-  "total_completed": 0,
+  "total_spawned": 4,
+  "total_completed": 20,
   "total_failed": 0,
-  "last_updated": "2026-06-17T04:51:38.878Z"
+  "last_updated": "2026-06-17T08:43:29.391Z"
 }

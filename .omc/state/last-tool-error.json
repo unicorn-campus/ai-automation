@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"ls C:\\\\Users\\\\hiond\\\\class\\\\ictk\",\"description\":\"List files in ictk directory\"}",
-  "error": "Exit code 2\nls: cannot access 'C:Usershiondclassictk': No such file or directory",
-  "timestamp": "2026-06-17T06:35:01.359Z",
-  "retry_count": 2
+  "tool_input_preview": "{\"command\":\"ls \\\"C:\\\\Users\\\\hiond\\\\class\\\\ictk\\\\prompts\\\\3회차\\\\\\\"\",\"description\":\"3회차 프롬프트 폴더 구조 확인\"}",
+  "error": "Exit code 2\n/usr/bin/bash: eval: line 1: unexpected EOF while looking for matching `\"'",
+  "timestamp": "2026-06-17T08:36:49.552Z",
+  "retry_count": 1
 }

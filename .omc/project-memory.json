@@ -1,0 +1,105 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1781680206625,
+  "projectRoot": "C:\\Users\\hiond\\class\\ictk",
+  "techStack": {
+    "languages": [],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [],
+    "gitBranches": null
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "decks": {
+      "path": "decks",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1781680206602,
+      "keyFiles": []
+    },
+    "prompts": {
+      "path": "prompts",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1781680206602,
+      "keyFiles": []
+    },
+    "references": {
+      "path": "references",
+      "purpose": null,
+      "fileCount": 12,
+      "lastAccessed": 1781680206603,
+      "keyFiles": [
+        "claude-code-builtin-skills.md",
+        "claude-code-prompting-essentials-ko.md",
+        "guide-prompt.md",
+        "guide-slack-webhook.md",
+        "ICTK-AI활용-쉬운안내서.docx"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "",
+      "accessCount": 5,
+      "lastAccessed": 1781685437808,
+      "type": "directory"
+    },
+    {
+      "path": "prompts\\3회차\\01-법률상담.md",
+      "accessCount": 5,
+      "lastAccessed": 1781685576227,
+      "type": "file"
+    },
+    {
+      "path": "references\\guide-prompt.md",
+      "accessCount": 4,
+      "lastAccessed": 1781685724950,
+      "type": "file"
+    },
+    {
+      "path": "prompts\\3회차\\02-기업정보조사.md",
+      "accessCount": 3,
+      "lastAccessed": 1781685724634,
+      "type": "file"
+    },
+    {
+      "path": "prompts\\2회차\\02-Gmail-메일액션추출.md",
+      "accessCount": 1,
+      "lastAccessed": 1781685118775,
+      "type": "file"
+    },
+    {
+      "path": "prompts\\2회차\\09-AI뉴스레터.md",
+      "accessCount": 1,
+      "lastAccessed": 1781685317544,
+      "type": "file"
+    },
+    {
+      "path": "prompts\\1회차\\03-시장조사.md",
+      "accessCount": 1,
+      "lastAccessed": 1781685317782,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}
