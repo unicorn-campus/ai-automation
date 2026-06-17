@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"cd \\\"C:/Users/hiond/plugins/courseware/output/ictk-automation-bootcamp/decks/01-claude-code-intro\\\" && node build.js; echo \\\"EXIT=$?\\\"; ls -la *.pptx 2>/dev/null\",\"description\":\"Run build....",
+  "error": "Exit code 2\n❌ PPT 생성 실패: Error: fontSize 15 < 16pt 금지! 슬라이드를 분리하거나 정보량을 줄일 것\n    at fs16 (C:\\Users\\hiond\\plugins\\courseware\\output\\ictk-automation-bootcamp\\decks\\_lib\\pptkit.js:11:11)\n    at Object.badge (C:\\Users\\hiond\\plugins\\courseware\\output\\ictk-automation-bootcamp\\decks\\_lib\\pptkit.js:109:110)\n    at createSlide07 (C:\\Users\\hiond\\plugins\\courseware\\output\\ictk-automation-bootcamp\\decks\\01-claude-code-intro\\build.js:256:5)\n    at main (C:\\Users\\hiond\\plugins\\courseware\\output\\ictk-automatio...",
+  "timestamp": "2026-06-16T05:41:32.791Z",
+  "retry_count": 1
+}

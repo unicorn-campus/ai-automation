@@ -1,0 +1,12 @@
+[
+  {
+    "filename": "s3_mcp_usbc.png",
+    "slide": 3,
+    "prompt": "Flat educational illustration on a clean white background. A central AI brain/chat icon with a single standardized USB-C style port on its side. Multiple simple connector cables (each ending in a distinct generic tool icon: a folder, a calendar, a mail envelope, a code branch, a map pin) plug into that one shared port, conveying one standard way to connect many tools. Minimal vector style, teal and green accent colors (#0D9488, #059669), dark brown line work (#2C2926), generous white space, no text, no logos, no brand marks."
+  },
+  {
+    "filename": "s8_computer_use_loop.png",
+    "slide": 8,
+    "prompt": "Flat educational illustration on a clean white background showing a four-step circular loop with simple arrows. Step icons around the circle: 1) a camera/screenshot frame of a screen (observe), 2) a cursor and a keyboard key (act), 3) a small app window changing (execute), 4) a magnifying glass over the screen (check result). Conveys an AI agent loop of observe-act-execute-verify repeating. Minimal vector style, teal and green accents (#0D9488, #059669), dark brown line work (#2C2926), one small subtle warning/shield element to hint at human approval, balanced composition, ample white space, no text, no logos."
+  }
+]

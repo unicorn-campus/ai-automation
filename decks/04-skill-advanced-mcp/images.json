@@ -1,0 +1,17 @@
+[
+  {
+    "filename": "s4_playwright_structure.png",
+    "slide": 4,
+    "prompt": "Flat educational illustration on a clean white background, teal and green accents (#0D9488, #059669) with dark brown line work (#2C2926), no text. Concept: an automated browser window (separate, clean, sandboxed) being read by an AI as a structured wireframe tree of nested boxes and nodes rather than as a pixel screenshot. Show a simple browser frame on the left, and on the right the same page abstracted into a neat hierarchical node tree (an accessibility/structure tree) connected by thin dark-brown lines, with small click and text-cursor icons. Minimal, friendly, geometric vector style, generous whitespace, no words or labels."
+  },
+  {
+    "filename": "s5_chrome_overlay.png",
+    "slide": 5,
+    "prompt": "Flat educational illustration on a clean white background, teal and green accents (#0D9488, #059669) with dark brown line work (#2C2926), no text. Concept: a friendly AI assistant overlaid as a soft translucent helper layer on top of a user's real web browser window, reading and summarizing a web page. Show one browser window with a simple article/document on screen, a gentle teal highlight glow indicating the AI is reading, a small magnifier and a condensed summary-lines icon beside it, and a small pause/hand icon hinting the AI stops and asks the human at login. Minimal, friendly, geometric vector style, generous whitespace, no words or labels."
+  },
+  {
+    "filename": "s7_custom_mcp.png",
+    "slide": 7,
+    "prompt": "Flat educational illustration on a clean white background, teal and green accents (#0D9488, #059669) with dark brown line work (#2C2926), no text. Concept: a small custom tool (a simple image-generation gadget icon, like a picture-frame with a spark) being plugged through a standardized connector/socket into a central AI toolbox. Show a tidy toolbox or hub in the center, a standard plug-and-socket connector in dark brown linking the custom tool to the hub, suggesting a custom MCP server exposing a tool in a standard way. Minimal, friendly, geometric vector style, generous whitespace, no words or labels."
+  }
+]

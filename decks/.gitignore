@@ -1,0 +1,9 @@
+# 빌드/검증 임시 산출물 (커밋 제외)
+_preview/
+*.bak.md
+_workflow-meta.json
+_lib/_smoke*
+_lib/_session_wf.js
+
+# Office 임시 잠금 파일
+~$*

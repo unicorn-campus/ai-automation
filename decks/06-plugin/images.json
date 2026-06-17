@@ -1,0 +1,22 @@
+[
+  {
+    "filename": "s3_plugin_bundle.png",
+    "slide": 3,
+    "prompt": "Flat educational illustration on a clean white background. On the left, four scattered small icons representing separate automation pieces: a recipe card (skill), a small worker/robot head (agent), a plug connector (MCP), and a gear with a small clock (hook). An arrow points right to a single neat open box or package that bundles all four icons together inside it, like an app installer. From the package, another arrow points to a small laptop screen receiving the bundle (installed for a teammate). Conveys many pieces bundled into one installable package. Minimal clean vector style, teal and green accent colors (#0D9488, #059669), dark brown line work (#2C2926), generous white space, balanced composition, no text, no letters, no logos, no brand marks."
+  },
+  {
+    "filename": "s5_marketplace_flow.png",
+    "slide": 5,
+    "prompt": "Flat educational illustration on a clean white background depicting a simple three-step marketplace install flow with arrows. Step 1: a storefront/catalog box with a small plus badge (add the marketplace). Step 2: one plugin package icon being selected from inside the catalog and downloaded with a down-arrow (install). Step 3: a slash-command token icon with a play triangle running on a laptop screen (use). Conveys add then install then use. Minimal clean vector style, teal and green accents (#0D9488, #059669), dark brown line work (#2C2926), ample white space, balanced composition, no text, no letters, no logos, no brand marks."
+  },
+  {
+    "filename": "s7_hook_gate.png",
+    "slide": 7,
+    "prompt": "Flat educational illustration on a clean white background conveying a hook as an automatic checkpoint before a tool runs. Center: a gate or checkpoint barrier positioned just before a file-write document icon. A small magnifier inspects incoming data; one path with a hidden-secret field (dots/asterisks) is stopped by a red stop sign or masked with an eye-slash icon, while a clean path passes through with a green check. A small gear-and-clock icon labels the checkpoint as an automatic rule. Conveys intercept-before-write, block or mask sensitive data. Minimal clean vector style, teal and green accents (#0D9488, #059669), red stop accent (#DC2626), dark brown line work (#2C2926), generous white space, no text, no letters, no logos, no brand marks."
+  },
+  {
+    "filename": "s10_plugin_security.png",
+    "slide": 10,
+    "prompt": "Flat educational illustration on a clean white background conveying treating a plugin like installing trusted software safely. Center: a shield icon overlapping a plugin package box. Around it three small simple icons: a verified-source badge (checkmark inside a circle), a lock over a hidden-data field with asterisks (mask sensitive data), and a human hand giving a final approval tap on a checkmark. A subtle warning triangle hints at untrusted sources being blocked. Minimal clean vector style, teal and green accents (#0D9488, #059669), dark brown line work (#2C2926), ample white space, no text, no letters, no logos, no brand marks."
+  }
+]

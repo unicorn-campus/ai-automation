@@ -1,0 +1,22 @@
+[
+  {
+    "filename": "s3_api_request_response.png",
+    "slide": 3,
+    "prompt": "Flat educational illustration on a clean white background showing an API request-response loop. On the left, a small program/computer icon. An arrow labeled by a small key icon points right to a cloud icon (external AI service) — representing a request sent with an API key. A second arrow returns from the cloud back to the program — representing the response. Below the program, a small padlock guarding a tag icon conveys that the key is stored safely (not written in code). Minimal clean vector style, teal and green accent colors (#0D9488, #059669), dark brown line work (#2C2926), generous white space, balanced composition, no text, no letters, no numbers, no logos, no brand marks."
+  },
+  {
+    "filename": "s4_stt_tts_vlm.png",
+    "slide": 4,
+    "prompt": "Flat educational illustration on a clean white background showing three side-by-side conversion concepts with arrows. First: a microphone/sound-wave icon with an arrow to a text-lines document icon (speech to text). Second: a text-lines document icon with an arrow to a speaker/sound-wave icon (text to speech). Third: a picture/photo icon with an arrow to a speech bubble with lines (image to description). Three equal balanced groups separated by subtle vertical spacing. Minimal clean vector style, teal and green accent colors (#0D9488, #059669), dark brown line work (#2C2926), ample white space, no text, no letters, no logos, no brand marks."
+  },
+  {
+    "filename": "s5_program_to_mcp.png",
+    "slide": 5,
+    "prompt": "Flat educational illustration on a clean white background. On the left, three small program/tool icons stacked (a sound-wave tool, a picture tool, a magnifying-glass search tool) representing custom programs. An arrow points right where they are wrapped by a rounded container shaped like a power plug/adapter (a standard connector metaphor) that plugs into a toolbox/socket icon on the far right, representing Claude adding the tools to its toolkit via a standard connector. A small checkmark badge near the socket hints at human approval. Minimal clean vector style, teal and green accent colors (#0D9488, #059669), dark brown line work (#2C2926), generous white space, balanced composition, no text, no letters, no logos, no brand marks."
+  },
+  {
+    "filename": "s6_youtube_search.png",
+    "slide": 6,
+    "prompt": "Flat educational illustration on a clean white background depicting searching videos and captions. A magnifying glass over a rounded video player rectangle (a play triangle inside) on the left. An arrow points right to a vertical list of small video-result cards (each a tiny thumbnail rectangle with a few short lines beside it). Below, a separate caption/subtitle strip icon (a small rectangle with horizontal text lines and a tiny highlighted segment) connected by an arrow to a summary document icon, conveying captions being searched and summarized. Minimal clean vector style, teal and green accent colors (#0D9488, #059669), dark brown line work (#2C2926), ample white space, balanced composition, no text, no letters, no logos, no brand marks."
+  }
+]

@@ -1,0 +1,117 @@
+{
+  "updatedAt": "2026-06-16T05:36:39.959Z",
+  "missions": [
+    {
+      "id": "session:b1eee242-6127-49ee-a59d-c61a315b78a0:none",
+      "source": "session",
+      "name": "none",
+      "objective": "Session mission",
+      "createdAt": "2026-06-16T05:30:27.274Z",
+      "updatedAt": "2026-06-16T05:36:39.959Z",
+      "status": "done",
+      "workerCount": 1,
+      "taskCounts": {
+        "total": 1,
+        "pending": 0,
+        "blocked": 0,
+        "inProgress": 0,
+        "completed": 1,
+        "failed": 0
+      },
+      "agents": [
+        {
+          "name": "workflow-subagent:a00e882",
+          "role": "workflow-subagent",
+          "ownership": "a00e88298279f6849",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-06-16T05:36:39.959Z"
+        }
+      ],
+      "timeline": [
+        {
+          "id": "session-start:a00e88298279f6849:2026-06-16T05:30:27.274Z",
+          "at": "2026-06-16T05:30:27.274Z",
+          "kind": "update",
+          "agent": "workflow-subagent:a00e882",
+          "detail": "started workflow-subagent:a00e882",
+          "sourceKey": "session-start:a00e88298279f6849"
+        },
+        {
+          "id": "session-stop:a00e88298279f6849:2026-06-16T05:35:57.059Z",
+          "at": "2026-06-16T05:35:57.059Z",
+          "kind": "completion",
+          "agent": "workflow-subagent:a00e882",
+          "detail": "completed",
+          "sourceKey": "session-stop:a00e88298279f6849"
+        },
+        {
+          "id": "session-stop:a00e88298279f6849:2026-06-16T05:36:01.041Z",
+          "at": "2026-06-16T05:36:01.041Z",
+          "kind": "completion",
+          "agent": "workflow-subagent:a00e882",
+          "detail": "completed",
+          "sourceKey": "session-stop:a00e88298279f6849"
+        },
+        {
+          "id": "session-stop:a00e88298279f6849:2026-06-16T05:36:09.064Z",
+          "at": "2026-06-16T05:36:09.064Z",
+          "kind": "completion",
+          "agent": "workflow-subagent:a00e882",
+          "detail": "completed",
+          "sourceKey": "session-stop:a00e88298279f6849"
+        },
+        {
+          "id": "session-stop:a00e88298279f6849:2026-06-16T05:36:15.149Z",
+          "at": "2026-06-16T05:36:15.149Z",
+          "kind": "completion",
+          "agent": "workflow-subagent:a00e882",
+          "detail": "completed",
+          "sourceKey": "session-stop:a00e88298279f6849"
+        },
+        {
+          "id": "session-stop:a00e88298279f6849:2026-06-16T05:36:20.864Z",
+          "at": "2026-06-16T05:36:20.864Z",
+          "kind": "completion",
+          "agent": "workflow-subagent:a00e882",
+          "detail": "completed",
+          "sourceKey": "session-stop:a00e88298279f6849"
+        },
+        {
+          "id": "session-stop:a00e88298279f6849:2026-06-16T05:36:25.120Z",
+          "at": "2026-06-16T05:36:25.120Z",
+          "kind": "completion",
+          "agent": "workflow-subagent:a00e882",
+          "detail": "completed",
+          "sourceKey": "session-stop:a00e88298279f6849"
+        },
+        {
+          "id": "session-stop:a00e88298279f6849:2026-06-16T05:36:31.050Z",
+          "at": "2026-06-16T05:36:31.050Z",
+          "kind": "completion",
+          "agent": "workflow-subagent:a00e882",
+          "detail": "completed",
+          "sourceKey": "session-stop:a00e88298279f6849"
+        },
+        {
+          "id": "session-stop:a00e88298279f6849:2026-06-16T05:36:34.875Z",
+          "at": "2026-06-16T05:36:34.875Z",
+          "kind": "completion",
+          "agent": "workflow-subagent:a00e882",
+          "detail": "completed",
+          "sourceKey": "session-stop:a00e88298279f6849"
+        },
+        {
+          "id": "session-stop:a00e88298279f6849:2026-06-16T05:36:39.959Z",
+          "at": "2026-06-16T05:36:39.959Z",
+          "kind": "completion",
+          "agent": "workflow-subagent:a00e882",
+          "detail": "completed",
+          "sourceKey": "session-stop:a00e88298279f6849"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "filename": "s3_mcp_connect.png",
+    "slide": 3,
+    "prompt": "Flat educational illustration on a clean white background, teal and green accents (#0D9488, #059669) with dark brown line work (#2C2926), no text. Central AI automation hub reaching out through standardized plug-and-socket connectors to external data sources, pulling live information back in; a stack of output file icons (slide, spreadsheet, document) on one side."
+  },
+  {
+    "filename": "s7_permission_audit.png",
+    "slide": 7,
+    "prompt": "Flat educational illustration on a clean white background, teal and green accents (#0D9488, #059669) with dark brown line work (#2C2926), no text. Safe least-privilege access: a narrow gate with a key/lock letting only a thin allowed stream through while unused connections are toggled off; a ledger/timestamps icon (audit log); a human hand giving final approval on a checkmark."
+  }
+]

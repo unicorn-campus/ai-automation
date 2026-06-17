@@ -1,0 +1,12 @@
+[
+  {
+    "filename": "s3_instructions_only.png",
+    "slide": 3,
+    "prompt": "Flat educational illustration on a clean white background conveying an 'instructions-only' automation that needs no external tools. Center: a closed, self-contained rounded workspace panel with NO connection wires or plugs leaving it (emphasizing isolation and zero external links). Inside the panel, a single instruction/recipe document icon (a card with a few horizontal lines and a small gear) feeds an arrow into a fresh blank document with a small draft/pencil mark, representing a generated draft. Small simple side icons hint at the strengths: a coin with a zero or a downward cost arrow (near-zero cost), a shield (low security risk), and a lightning bolt (instant start). Minimal clean vector style, teal and green accent colors (#0D9488, #059669), dark brown line work (#2C2926), generous white space, balanced composition, no text, no letters, no numbers, no logos, no brand marks."
+  },
+  {
+    "filename": "s4_poc_three_steps.png",
+    "slide": 4,
+    "prompt": "Flat educational illustration on a clean white background depicting a three-step build flow with left-to-right arrows that progressively combine into one package. Step 1: a chat prompt bubble icon with a small test/checkmark, representing a tested prompt. Step 2: a document card (SKILL file) joined by a small connector to two tiny worker/agent figures (author and reviewer), representing skill plus agents. Step 3: an open box or package icon neatly containing the previous elements, representing a packaged plugin. Subtle arrows show each step merging into the next. Minimal clean vector style, teal and green accents (#0D9488, #059669), with restrained use of step accent colors (blue #0284C7, amber #D97706), dark brown line work (#2C2926), generous white space, balanced composition, no text, no letters, no numbers, no logos, no brand marks."
+  }
+]

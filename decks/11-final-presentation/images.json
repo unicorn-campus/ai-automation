@@ -1,0 +1,17 @@
+[
+  {
+    "filename": "s2_journey_roadmap.png",
+    "slide": 2,
+    "prompt": "Flat educational illustration on a clean white background, teal and green accents (#0D9488, #059669) with dark brown line work (#2C2926), no text. Concept: a learning journey shown as a rising staircase of five ascending steps, each wider than the last to convey growing capability. Step 1 a small chat prompt bubble, step 2 a recipe/document card, step 3 two linked node figures (orchestrator and sub-agent), step 4 a stacked box/package, step 5 a small factory/chip building reached at the top (company use-case). A subtle upward arrow runs along the staircase. Minimal, friendly, geometric vector style, generous whitespace, no words, no letters, no logos, no brand marks."
+  },
+  {
+    "filename": "s4_plugin_packaging.png",
+    "slide": 4,
+    "prompt": "Flat educational illustration on a clean white background, teal and green accents (#0D9488, #059669) with dark brown line work (#2C2926), no text. Concept: several scattered automation pieces being bundled into one package. On the left, three small cards (each a simple automation tile) plus one small check/review badge icon, connected by thin dark-brown lines pointing right into a single neat open box or plugin block in the center that wraps them together with a tidy bow or seam. Suggests packaging multiple PoCs and a verify step into one installable plugin. Minimal, friendly, geometric vector style, generous whitespace, no words, no letters, no logos, no brand marks."
+  },
+  {
+    "filename": "s10_completion_growth.png",
+    "slide": 10,
+    "prompt": "Flat educational illustration on a clean white background, teal and green accents (#0D9488, #059669) with dark brown line work (#2C2926), no text. Concept: a warm graduation-and-growth metaphor. A small sprout grows into a simple tree whose branches split outward and pass small leaf or card icons to a few minimal human figures around it (sharing with colleagues). At the base of the tree, a simple shield icon supports it, representing security fundamentals. Gentle upward and outward flow conveying continued growth after completion. Minimal, friendly, geometric vector style, generous whitespace, no words, no letters, no logos, no brand marks."
+  }
+]

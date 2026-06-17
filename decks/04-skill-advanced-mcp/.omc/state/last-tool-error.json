@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"ls -d /c/Users/hiond/plugins/courseware/output/ictk-automation-bootcamp/decks/*/ 2>/dev/null; echo \\\"---\\\"; ls /c/Users/hiond/plugins/courseware/output/ictk-automation-bootcamp/decks/09*/ ...",
+  "error": "Exit code 2\n/c/Users/hiond/plugins/courseware/output/ictk-automation-bootcamp/decks/_lib/\n/c/Users/hiond/plugins/courseware/output/ictk-automation-bootcamp/decks/01-claude-code-intro/\n/c/Users/hiond/plugins/courseware/output/ictk-automation-bootcamp/decks/02-connectors-routines/\n/c/Users/hiond/plugins/courseware/output/ictk-automation-bootcamp/decks/03-skill-basics/\n/c/Users/hiond/plugins/courseware/output/ictk-automation-bootcamp/decks/04-skill-advanced-mcp/\n/c/Users/hiond/plugins/courseware/ou...",
+  "timestamp": "2026-06-16T10:35:26.229Z",
+  "retry_count": 1
+}

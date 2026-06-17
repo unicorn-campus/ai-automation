@@ -1,0 +1,17 @@
+[
+  {
+    "filename": "s3_team_metaphor.png",
+    "slide": 3,
+    "prompt": "Flat educational illustration on a clean white background using an office-team metaphor. In the center-top, one manager figure icon (a simple person silhouette with a small clipboard) represents the main orchestrator. Two arrows fan out to two team-member figure icons below: one holding a pencil/document (a writer role) and one holding a magnifying glass over a page (a reviewer role). Each team member sits at a small separate desk block to convey isolated workspaces. Small return arrows go back up from each member to the manager carrying a tiny summary card. Minimal clean vector style, teal and green accent colors (#0D9488, #059669), dark brown line work (#2C2926), generous white space, balanced symmetric composition, no text, no letters, no numbers, no logos, no brand marks."
+  },
+  {
+    "filename": "s4_orchestration_flow.png",
+    "slide": 4,
+    "prompt": "Flat educational illustration on a clean white background showing a three-stage orchestration flow left to right with arrows. Stage 1 Distribute: a single hub node (small circle) splitting into three branches. Stage 2 Run: three separate small boxes side by side, each containing a simple gear, conveying independent parallel execution in isolated spaces. Stage 3 Synthesize: the three branches merging back into one node holding a small combined result card. Use distinct accent colors for the stages within the palette (green #059669 for start/end, a calm blue tone, and a purple tone) while keeping line work dark brown (#2C2926). Minimal clean vector style, teal and green accents (#0D9488, #059669), ample white space, no text, no letters, no numbers, no logos."
+  },
+  {
+    "filename": "s7_harness_tuning.png",
+    "slide": 7,
+    "prompt": "Flat educational illustration on a clean white background conveying tuning an agent setup across three dimensions. Center: a small control panel or dashboard card with three round dials/knobs. Each dial is paired with a tiny simple icon above it: a coin/price tag (cost), a speed gauge or lightning bolt (performance), and a shield with a small lock (security). A subtle small cluster of connected agent nodes sits beside the panel to show what is being tuned. Minimal clean vector style, teal and green accent colors (#0D9488, #059669), dark brown line work (#2C2926), generous white space, balanced composition, no text, no letters, no numbers, no logos, no brand marks."
+  }
+]

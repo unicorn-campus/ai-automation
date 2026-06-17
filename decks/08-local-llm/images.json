@@ -1,0 +1,17 @@
+[
+  {
+    "filename": "s2_data_stays_local.png",
+    "slide": 2,
+    "prompt": "Flat educational illustration on a clean white background, teal and green accents (#0D9488, #059669) with dark brown line work (#2C2926), no text. Concept: sensitive company data stays safely inside a local computer/on-premise boundary instead of leaving to an external cloud. Show a desktop computer or small server inside a softly drawn rounded boundary line (a perimeter), with a document and a tiny lock icon kept inside it. Outside the boundary, a cloud icon is gently separated by a dashed line with a small no-leave indicator (a subtle blocked arrow showing data does not exit). Convey that processing happens within the device. Minimal, friendly, geometric vector style, generous whitespace, no words or labels, no logos, no brand marks."
+  },
+  {
+    "filename": "s4_four_local_tools.png",
+    "slide": 4,
+    "prompt": "Flat educational illustration on a clean white background, teal and green accents (#0D9488, #059669) with dark brown line work (#2C2926), no text. Concept: four small specialized lightweight AI tools, each good at one job, arranged in a tidy 2 by 2 grid of simple icon cards. Card 1: a document with condensed summary lines (text summarization). Card 2: a PDF/page icon transforming into a structured outline of headings and a small table (document conversion). Card 3: a sound waveform with two small speaker bubbles of different tones beside it (speech to text plus speaker separation). Card 4: a picture/photo icon with a small magnifier and an eye (image understanding). All four sit inside one gentle rounded boundary suggesting they all run locally. Minimal, friendly, geometric vector style, generous whitespace, no words or labels, no logos."
+  },
+  {
+    "filename": "s5_local_mcp_wrap.png",
+    "slide": 5,
+    "prompt": "Flat educational illustration on a clean white background, teal and green accents (#0D9488, #059669) with dark brown line work (#2C2926), no text. Concept: a small local AI model gadget is wrapped by a standard connector/plug (an MCP server) and plugged into a central AI toolbox hub, while all of it sits inside a local-device boundary line so data stays inside. Show on the left a small model chip/gadget icon enclosed by a rounded wrapper with a standard plug-and-socket connector in dark brown linking it to a tidy central toolbox/hub on the right. Draw a soft rounded perimeter around the whole scene with a tiny lock to convey the data never leaves the machine. Minimal, friendly, geometric vector style, generous whitespace, no words or labels, no logos, no brand marks."
+  }
+]

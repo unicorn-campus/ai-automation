@@ -1,0 +1,22 @@
+[
+  {
+    "filename": "s3_skill_recipe.png",
+    "slide": 3,
+    "prompt": "Flat educational illustration on a clean white background. On the left, a tangle of repeated manual tasks shown as identical small sticky-note cards stacked messily (conveying repetition). An arrow points right to a single neat recipe card icon (a card with a few horizontal lines and a small gear), representing one reusable automation recipe. Around the recipe card, three small simple icons hint at reuse: a play/run triangle, a refresh-loop arrow, and a sparkle. Minimal clean vector style, teal and green accent colors (#0D9488, #059669), dark brown line work (#2C2926), generous white space, balanced composition, no text, no letters, no logos, no brand marks."
+  },
+  {
+    "filename": "s5_progressive_disclosure.png",
+    "slide": 5,
+    "prompt": "Flat educational illustration on a clean white background showing a three-level progressive loading concept as a simple staircase or stacked layers. Level 1: a small name-tag/label icon (tiny, always present). Level 2: an open document/page icon (medium, loaded when needed). Level 3: a paperclip with extra file icons (only loaded when truly needed). A subtle upward arrow connects the three levels to convey load-only-what-you-need. Minimal clean vector style, teal and green accents (#0D9488, #059669), dark brown line work (#2C2926), ample white space, no text, no letters, no logos."
+  },
+  {
+    "filename": "s8_create_skill_flow.png",
+    "slide": 8,
+    "prompt": "Flat educational illustration on a clean white background depicting a simple three-step creation flow with arrows. Step 1: a chat prompt bubble with a small spoken-request icon. Step 2: a file document icon (SKILL.md) appearing with a green check and a small approve/diff checkmark badge (human approval). Step 3: a slash-command token icon being clicked to run, with a play triangle. Conveys ask, approve, then use. Minimal clean vector style, teal and green accents (#0D9488, #059669), dark brown line work (#2C2926), generous white space, balanced composition, no text, no letters, no logos."
+  },
+  {
+    "filename": "s10_skill_security.png",
+    "slide": 10,
+    "prompt": "Flat educational illustration on a clean white background conveying treating a skill like installing trusted software safely. Center: a shield icon overlapping a recipe/document card. Around it three small simple icons: a verified-source badge (checkmark inside a circle), a lock over a hidden-data field (no secrets), and a human hand giving a final approval tap on a checkmark. A subtle warning triangle hints at untrusted sources being blocked. Minimal clean vector style, teal and green accents (#0D9488, #059669), dark brown line work (#2C2926), ample white space, no text, no letters, no logos, no brand marks."
+  }
+]

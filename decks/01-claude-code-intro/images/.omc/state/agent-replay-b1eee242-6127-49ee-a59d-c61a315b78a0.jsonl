@@ -1,0 +1,10 @@
+{"t":0,"agent":"a00e882","agent_type":"workflow-subagent","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"a00e882","agent_type":"workflow-subagent","event":"agent_stop","success":true,"duration_ms":329785}
+{"t":0,"agent":"a00e882","agent_type":"workflow-subagent","event":"agent_stop","success":true,"duration_ms":333767}
+{"t":0,"agent":"a00e882","agent_type":"workflow-subagent","event":"agent_stop","success":true,"duration_ms":341790}
+{"t":0,"agent":"a00e882","agent_type":"workflow-subagent","event":"agent_stop","success":true,"duration_ms":347875}
+{"t":0,"agent":"a00e882","agent_type":"workflow-subagent","event":"agent_stop","success":true,"duration_ms":353590}
+{"t":0,"agent":"a00e882","agent_type":"workflow-subagent","event":"agent_stop","success":true,"duration_ms":357846}
+{"t":0,"agent":"a00e882","agent_type":"workflow-subagent","event":"agent_stop","success":true,"duration_ms":363776}
+{"t":0,"agent":"a00e882","agent_type":"workflow-subagent","event":"agent_stop","success":true,"duration_ms":367601}
+{"t":0,"agent":"a00e882","agent_type":"workflow-subagent","event":"agent_stop","success":true,"duration_ms":372685}
