@@ -32,9 +32,6 @@
   | OpenAI | https://platform.openai.com/api-keys | `OPENAI_API_KEY` | 없음 |
   | Anthropic(Claude) | https://console.anthropic.com/settings/keys | `ANTHROPIC_API_KEY` | 없음 |
   | 구글 AI Studio(Gemini) | https://aistudio.google.com/apikey | `GOOGLE_API_KEY` | 없음 |
-  | 카카오 개발자 | https://developers.kakao.com/console/app | `KAKAO_REST_API_KEY` | 앱 먼저 생성 |
-  | 네이버 개발자센터 | https://developers.naver.com/apps | `NAVER_CLIENT_ID` 등 | 앱 먼저 생성 |
-  | 공공데이터포털 | https://www.data.go.kr | `DATA_GO_KR_KEY` | 활용신청 필요 |
 
 [작업방법]
 1. 발급받을 서비스 질문
