@@ -11,6 +11,7 @@ const BASE = __dirname
 const OUT  = path.join(BASE, 'Audit Server 셋업 가이드.docx')
 
 // ── 이미지 로드 및 치수 계산 ──────────────────────────────
+const imgArch   = fs.readFileSync(path.join(BASE, 'img-architecture.png'))
 const imgAdmin  = fs.readFileSync(path.join(BASE, 'img-step2-admin.png'))
 const imgDialog = fs.readFileSync(path.join(BASE, 'img-step3-dialog.png'))
 
@@ -18,6 +19,7 @@ function pngSize(buf) {
   return { w: buf.readUInt32BE(16), h: buf.readUInt32BE(20) }
 }
 const TW = 520
+const arc = pngSize(imgArch);  const arcH = Math.round(TW * arc.h / arc.w)
 const adm = pngSize(imgAdmin);  const admH = Math.round(TW * adm.h / adm.w)
 const dlg = pngSize(imgDialog); const dlgH = Math.round(TW * dlg.h / dlg.w)
 
@@ -119,7 +121,14 @@ const children = [
     p([run('• 예상 소요시간: ', { bold: true }), run('최초 구축 30분 / 재등록 5분')], sp(0, 0)),
   ], C.lblue, '93C5FD'),
 
-  p('', sp(0, 200)),
+  p('', sp(0, 240)),
+
+  // 아키텍처 다이어그램
+  p(run('시스템 아키텍처', { bold: true, size: 24, color: C.dblue }), { ...sp(0, 120), border: hLine('BFDBFE', 2) }),
+  img(imgArch, TW, arcH),
+  p(run('▲ Claude Code → Managed Hook → Fly.io 감사 서버 → PostgreSQL 전체 흐름', { size: 18, color: C.gray, italics: true }),
+    { alignment: AlignmentType.CENTER, ...sp(60, 200) }),
+
   hr(),
 
   // ===== 사전 준비사항 =====
