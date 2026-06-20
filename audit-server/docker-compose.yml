@@ -1,0 +1,41 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB:       ${DB_NAME:-auditdb}
+      POSTGRES_USER:     ${DB_USER:-audituser}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      # 컨테이너 첫 실행 시 마이그레이션 자동 적용
+      - ./migrations:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test:     ["CMD-SHELL", "pg_isready -U ${DB_USER:-audituser} -d ${DB_NAME:-auditdb}"]
+      interval: 10s
+      timeout:  5s
+      retries:  5
+
+  server:
+    build: .
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      DB_HOST:     db
+      DB_PORT:     5432
+      DB_NAME:     ${DB_NAME:-auditdb}
+      DB_USER:     ${DB_USER:-audituser}
+      DB_PASSWORD: ${DB_PASSWORD}
+      API_KEY:     ${API_KEY}
+      PORT:        3000
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test:         ["CMD-SHELL", "wget -qO- http://localhost:3000/health || exit 1"]
+      interval:     30s
+      timeout:      5s
+      start_period: 15s
+      retries:      3
+
+volumes:
+  pgdata:
