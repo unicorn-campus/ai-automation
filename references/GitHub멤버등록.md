@@ -7,5 +7,14 @@
 - 멤버 추가 
 ![](images/2026-07-07-17-02-40.png)
 
-'hiondal@gmail.com'와 'byeonghwi@learningspoons.com'을 멤버로 추가 
+아래 두사람 멤버로 추가
+강사
+```
+hiondal@gmail.com
+```
+  
+교육운영자 
+```
+byeonghwi@learningspoons.com
+```
 
