@@ -1,0 +1,442 @@
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e6]:
+      - navigation [ref=e399]:
+        - generic [ref=e9]:
+          - generic:
+            - link:
+              - /url: /new
+              - img
+          - button [ref=e400] [cursor=pointer]:
+            - generic [ref=e14]:
+              - generic [ref=e15]: 
+              - generic [ref=e16]: 
+        - generic [ref=e17]:
+          - link [ref=e401] [cursor=pointer]:
+            - /url: /new
+            - generic [ref=e26]: 
+          - generic [ref=e27]:
+            - generic [ref=e28]:
+              - link [ref=e402] [cursor=pointer]:
+                - /url: /recents
+                - generic [ref=e32]: 
+                - text: 채팅
+              - link [ref=e403] [cursor=pointer]:
+                - /url: /projects
+                - generic [ref=e36]: 
+                - text: 프로젝트
+              - link [ref=e404] [cursor=pointer]:
+                - /url: /artifacts
+                - generic [ref=e41]: 
+              - link [ref=e405] [cursor=pointer]:
+                - /url: /customize
+                - generic [ref=e45]: 
+            - generic [ref=e46]:
+              - generic [ref=e47]:
+                - generic:
+                  - heading [level=2]:
+                    - button [expanded]:
+                      - generic: 
+              - list [ref=e48]:
+                - listitem [ref=e49]:
+                  - link [ref=e406] [cursor=pointer]:
+                    - /url: /code
+                    - generic [ref=e54]: 
+                - listitem [ref=e55]:
+                  - link [ref=e407] [cursor=pointer]:
+                    - /url: /design
+                    - generic [ref=e61]: 
+            - generic [ref=e64]:
+              - generic [ref=e103]:
+                - generic:
+                  - heading [level=2]:
+                    - button [expanded]:
+                      - generic: 
+                - list [ref=e104]:
+                  - listitem [ref=e105]:
+                    - link [ref=e107] [cursor=pointer]:
+                      - /url: /ask-your-org
+                      - generic [ref=e109]: 
+              - paragraph [ref=e66]: 채팅이 여기에 표시됩니다
+          - link [ref=e408] [cursor=pointer]:
+            - /url: /downloads
+            - generic [ref=e74]: 
+          - button [ref=e409] [cursor=pointer]:
+            - generic [ref=e79]:
+              - generic [ref=e81]: H
+              - img [ref=e83]
+            - img [ref=e87]
+      - generic [ref=e89]:
+        - banner [ref=e112]:
+          - heading [level=1] [ref=e410]:
+            - generic [ref=e115]: 조직 설정
+        - main [ref=e116]:
+          - generic [ref=e117]:
+            - navigation [ref=e118]:
+              - generic [ref=e120]:
+                - list [ref=e121]:
+                  - listitem [ref=e122]:
+                    - link [ref=e411] [cursor=pointer]:
+                      - /url: /admin-settings/notifications
+                      - generic [ref=e124]:
+                        - text: 알림
+                        - generic [ref=e125]: "2"
+                  - listitem [ref=e126]
+                  - listitem [ref=e127]:
+                    - link [ref=e412] [cursor=pointer]:
+                      - /url: /admin-settings/organization
+                      - text: 조직 및 액세스
+                  - listitem [ref=e129]:
+                    - link [ref=e413] [cursor=pointer]:
+                      - /url: /admin-settings/billing
+                      - text: 결제
+                  - listitem [ref=e131]:
+                    - link [ref=e414] [cursor=pointer]:
+                      - /url: /admin-settings/usage
+                      - text: 사용량
+                  - listitem [ref=e133]:
+                    - link [ref=e415] [cursor=pointer]:
+                      - /url: /admin-settings/data-privacy-controls
+                      - text: 데이터 및 개인정보 보호
+                  - listitem [ref=e135]:
+                    - link [ref=e416] [cursor=pointer]:
+                      - /url: /admin-settings/capabilities
+                      - text: 기능
+                - heading [level=2] [ref=e417]: 사용자
+                - list [ref=e138]:
+                  - listitem [ref=e139]:
+                    - link [ref=e418] [cursor=pointer]:
+                      - /url: /admin-settings/members
+                      - text: 멤버, 회원, 구성원
+                - heading [level=2] [ref=e419]: 제품
+                - list [ref=e142]:
+                  - listitem [ref=e143]:
+                    - link [ref=e420] [cursor=pointer]:
+                      - /url: /admin-settings/claude-code
+                      - text: Claude Code
+                  - listitem [ref=e145]:
+                    - link [ref=e421] [cursor=pointer]:
+                      - /url: /admin-settings/claude-code/github
+                      - text: GitHub
+                  - listitem [ref=e147]:
+                    - link [ref=e422] [cursor=pointer]:
+                      - /url: /admin-settings/browser-extension
+                      - generic [ref=e149]:
+                        - text: Chrome용 Claude
+                        - generic [ref=e150]: 베타
+                  - listitem [ref=e151]:
+                    - link [ref=e423] [cursor=pointer]:
+                      - /url: /admin-settings/claude-in-slack
+                      - text: Slack의 Claude
+                  - listitem [ref=e153]:
+                    - link [ref=e424] [cursor=pointer]:
+                      - /url: /admin-settings/cowork
+                      - text: 협업
+                  - listitem [ref=e155]:
+                    - link [ref=e425] [cursor=pointer]:
+                      - /url: /admin-settings/office-agents
+                      - text: 오피스 에이전트
+                - heading [level=2] [ref=e426]: 라이브러리
+                - list [ref=e158]:
+                  - listitem [ref=e159]:
+                    - link [ref=e427] [cursor=pointer]:
+                      - /url: /admin-settings/plugins
+                      - text: 플러그인
+                  - listitem [ref=e161]:
+                    - link [ref=e428] [cursor=pointer]:
+                      - /url: /admin-settings/connectors
+                      - text: 커넥터
+                  - listitem [ref=e163]:
+                    - link [ref=e429] [cursor=pointer]:
+                      - /url: /admin-settings/skills
+                      - text: 스킬
+                  - listitem [ref=e165]:
+                    - link [ref=e430] [cursor=pointer]:
+                      - /url: /admin-settings/directory/submissions
+                      - text: 디렉터리
+                - list [ref=e167]:
+                  - listitem [ref=e168]:
+                    - link [ref=e431] [cursor=pointer]:
+                      - /url: /settings
+                      - text: 개인 설정
+                      - img [ref=e170]
+            - main [ref=e173]:
+              - generic [ref=e174]:
+                - heading [level=3] [ref=e432]: Claude Code
+                - generic [ref=e178]:
+                  - group [ref=e433]:
+                    - generic [ref=e180]:
+                      - generic [ref=e182]: 관리형 설정 (settings.json)
+                      - generic [ref=e183]:
+                        - text: 전체 조직의 권한, 허용된 디렉터리 등을 정의하세요. 이 설정은 사용자 및 프로젝트 설정을 재정의하며 CLI, IDE 및 데스크톱 앱의 Claude Code에 적용됩니다.
+                        - link [ref=e434] [cursor=pointer]:
+                          - /url: https://code.claude.com/docs/en/settings
+                          - text: 자세히 알아보기
+                          - generic [ref=e185]: (opens in new tab)
+                    - button [ref=e435] [cursor=pointer]:
+                      - generic [ref=e189]: 관리
+                  - group [ref=e436]:
+                    - generic [ref=e191]:
+                      - generic [ref=e193]: Claude Code Desktop
+                      - generic [ref=e194]: 팀원들이 데스크톱 앱에서 Claude와 함께 코딩하고 로컬에서 코딩 세션을 실행할 수 있도록 허용합니다.
+                    - generic [ref=e195]:
+                      - generic [ref=e196]: 기본값
+                      - generic [ref=e197]:
+                        - switch [checked] [ref=e437] [cursor=pointer]
+                        - checkbox [checked] [ref=e200]
+                  - group [ref=e438]:
+                    - generic [ref=e202]:
+                      - generic [ref=e205]:
+                        - text: 웹 및 모바일의 Claude Code
+                        - generic [ref=e206]: 미리보기
+                      - generic [ref=e207]: 팀원들이 claude.ai/code 또는 Claude 모바일 앱에서 Claude와 함께 코딩할 수 있도록 허용합니다. 세션은 클라우드 환경에서 실행됩니다.
+                    - generic [ref=e208]:
+                      - generic [ref=e209]: 기본값
+                      - generic [ref=e210]:
+                        - switch [checked] [ref=e439] [cursor=pointer]
+                        - checkbox [checked] [ref=e213]
+                  - generic [ref=e214]:
+                    - group [ref=e440]:
+                      - generic [ref=e216]:
+                        - generic [ref=e219]:
+                          - text: 세션 공유
+                          - generic [ref=e220]: 미리보기
+                        - generic [ref=e221]: 팀원들이 조직 내 다른 사람들과 클라우드 세션을 공유할 수 있도록 허용합니다.
+                      - generic [ref=e222]:
+                        - generic [ref=e223]: 관리자가 설정함
+                        - switch [checked] [ref=e441] [cursor=pointer]
+                        - checkbox [checked] [ref=e226]
+                    - group [ref=e442]:
+                      - generic [ref=e228]:
+                        - generic [ref=e231]:
+                          - text: 빠른 웹 설정
+                          - generic [ref=e232]: 미리보기
+                        - generic [ref=e233]: 팀원들이 로컬 GitHub 자격 증명을 사용하여 클라우드 세션을 시작할 수 있도록 허용합니다.
+                      - generic [ref=e234]:
+                        - generic [ref=e235]: 관리자가 설정함
+                        - generic [ref=e236]:
+                          - switch [checked] [ref=e443] [cursor=pointer]
+                          - checkbox [checked] [ref=e239]
+                  - group [ref=e444]:
+                    - generic [ref=e241]:
+                      - generic [ref=e244]:
+                        - text: 원격 제어
+                        - generic [ref=e245]: 리서치 프리뷰
+                      - generic [ref=e246]:
+                        - text: 팀원이 claude.ai/code 또는 Claude 모바일 앱에서 로컬 Claude Code 세션을 계속 진행할 수 있도록 허용합니다. 세션은 사용자의 로컬 파일 시스템, 도구 및 프로젝트 구성에 대한 전체 액세스 권한을 가진 사용자 기기에서 실행됩니다.
+                        - link [ref=e445] [cursor=pointer]:
+                          - /url: https://code.claude.com/docs/en/remote-control
+                          - text: 자세히 알아보기
+                          - generic [ref=e248]: (opens in new tab)
+                    - generic [ref=e249]:
+                      - generic [ref=e250]: 관리자가 설정함
+                      - generic [ref=e251]:
+                        - switch [checked] [ref=e446] [cursor=pointer]
+                        - checkbox [checked] [ref=e254]
+              - generic [ref=e255]:
+                - heading [level=3] [ref=e447]: 기능
+                - generic [ref=e259]:
+                  - group [ref=e448]:
+                    - generic [ref=e262]:
+                      - generic [ref=e265]:
+                        - text: 빠른 모드
+                        - generic [ref=e266]: 미리보기
+                      - generic [ref=e267]:
+                        - text: 동일한 모델 품질에서 훨씬 빠른 출력을 제공합니다. 사용 크레딧에서 더 높은 요금으로 청구됩니다. 빠른 모드를 사용하려면 사용 크레딧이 필요합니다.
+                        - link [ref=e449] [cursor=pointer]:
+                          - /url: /admin-settings/usage
+                          - text: 사용량
+                        - text: 에서 활성화하세요.
+                    - generic [ref=e269]:
+                      - generic [ref=e270]: 기본값
+                      - generic [ref=e271]:
+                        - switch [ref=e450] [cursor=pointer]
+                        - checkbox [ref=e274]
+                  - group [ref=e451]:
+                    - generic [ref=e276]:
+                      - generic [ref=e279]:
+                        - text: 루틴
+                        - generic [ref=e280]: 미리보기
+                      - generic [ref=e281]:
+                        - text: 팀원들이 클라우드에서 Claude Code를 자율적으로 실행하는 예약 및 웹훅 트리거 루틴을 만들 수 있도록 허용합니다. 이 기능을 끄면 Slack의 Claude도 꺼집니다.
+                        - link [ref=e452] [cursor=pointer]:
+                          - /url: https://code.claude.com/docs/en/routines
+                          - text: 자세히 알아보기
+                          - generic [ref=e283]: (opens in new tab)
+                    - generic [ref=e284]:
+                      - generic [ref=e285]: 기본값
+                      - generic [ref=e286]:
+                        - switch [checked] [ref=e453] [cursor=pointer]
+                        - checkbox [checked] [ref=e289]
+                  - group [ref=e454]:
+                    - generic [ref=e291]:
+                      - generic [ref=e294]:
+                        - text: 아티팩트
+                        - generic [ref=e295]: 미리보기
+                      - generic [ref=e296]: 팀원들이 Claude Code 세션에서 정적 사이트를 Anthropic이 호스팅하는 공유 가능한 URL로 게시할 수 있도록 허용합니다.
+                    - generic [ref=e297]:
+                      - generic [ref=e298]: 기본값
+                      - generic [ref=e299]:
+                        - switch [checked] [ref=e455] [cursor=pointer]
+                        - checkbox [checked] [ref=e302]
+                  - group [ref=e456]:
+                    - generic [ref=e304]:
+                      - generic [ref=e306]: 워크플로
+                      - generic [ref=e307]: 팀이 Claude Code에서 멀티 에이전트 워크플로를 실행할 수 있도록 허용합니다.
+                    - generic [ref=e308]:
+                      - generic [ref=e309]: 기본값
+                      - generic [ref=e310]:
+                        - switch [checked] [ref=e457] [cursor=pointer]
+                        - checkbox [checked] [ref=e313]
+                  - group [ref=e458]:
+                    - generic [ref=e315]:
+                      - generic [ref=e318]:
+                        - text: 채널
+                        - generic [ref=e319]: 미리보기
+                      - generic [ref=e320]: 팀원들이 Claude Code 세션에서 MCP 서버로부터 수신 메시지를 받을 수 있도록 허용합니다. 사용자는 --channels 플래그를 통해 채널 서버에 연결하고 신뢰할 서버를 선택합니다. 이벤트는 메시징 플랫폼, 모니터링 도구 등에서 전송될 수 있습니다.
+                    - generic [ref=e321]:
+                      - generic [ref=e322]: 기본값
+                      - switch [ref=e459] [cursor=pointer]
+                      - checkbox [ref=e325]
+              - generic [ref=e326]:
+                - heading [level=3] [ref=e460]:
+                  - generic [ref=e330]: 코드 리뷰
+                - group [ref=e461]:
+                  - generic [ref=e335]: Claude가 GitHub의 리포지토리에 대한 풀 리퀘스트를 검토하도록 허용합니다.
+                  - button [ref=e462] [cursor=pointer]:
+                    - generic [ref=e340]: 구성
+              - generic [ref=e341]:
+                - heading [level=3] [ref=e463]: 분석
+                - generic [ref=e345]:
+                  - group [ref=e464]:
+                    - generic [ref=e347]:
+                      - generic [ref=e349]: Claude Code 분석
+                      - generic [ref=e350]: 팀이 Claude Code를 어떻게 활용하는지 확인하세요 — 수락률, 생성된 코드 등.
+                    - generic [ref=e351]:
+                      - generic [ref=e352]: 관리자가 설정함
+                      - switch [checked] [ref=e465] [cursor=pointer]
+                      - checkbox [checked] [ref=e355]
+                  - group [ref=e466]:
+                    - generic [ref=e357]:
+                      - generic [ref=e360]:
+                        - text: GitHub 분석
+                        - generic [ref=e361]: 베타
+                      - generic [ref=e362]: 풀 리퀘스트와 코드 리뷰를 모니터링하여 팀의 생산성 변화를 추적하세요.
+                    - generic [ref=e363]:
+                      - generic [ref=e364]: 관리자가 설정함
+                      - switch [checked] [ref=e467] [cursor=pointer]
+                      - checkbox [checked] [ref=e367]
+                  - generic [ref=e368]:
+                    - generic [ref=e369]:
+                      - paragraph [ref=e370]: GitHub 조직
+                      - paragraph [ref=e371]: unicorn에 속한 GitHub 조직을 선택하세요.
+                    - button [ref=e468] [cursor=pointer]:
+                      - generic [ref=e374]:
+                        - img [ref=e376]
+                        - text: GitHub 연결
+              - generic [ref=e378]:
+                - heading [level=3] [ref=e469]: 자체 호스팅 인프라
+                - generic [ref=e383]:
+                  - generic [ref=e384]:
+                    - generic [ref=e385]:
+                      - generic [ref=e386]: GitHub Enterprise
+                      - generic [ref=e387]: 조직의 GitHub Enterprise 인스턴스를 연결하여 코드 리뷰 및 리포지토리 액세스를 활성화하세요.
+                    - generic [ref=e388]:
+                      - button [ref=e470] [cursor=pointer]:
+                        - generic [ref=e391]:
+                          - generic [ref=e392]: 
+                          - text: 연결
+                      - button [ref=e471] [cursor=pointer]:
+                        - generic [ref=e395]: 수동으로 추가
+                  - paragraph [ref=e398]: 구성된 GitHub Enterprise 인스턴스가 없습니다. 시작하려면 하나를 추가하세요.
+    - list
+  - dialog "관리형 설정" [ref=e475]:
+    - generic [ref=e476]:
+      - generic [ref=e477]:
+        - heading "관리형 설정" [level=2] [ref=e479]
+        - button "Close" [active] [ref=e480] [cursor=pointer]:
+          - generic [ref=e483]: 
+      - generic [ref=e484]:
+        - generic [ref=e485]:
+          - generic [ref=e486]:
+            - generic [ref=e487]: settings.json
+            - button "v4 (31분 전)" [ref=e488] [cursor=pointer]:
+              - generic [ref=e490]:
+                - text: v4 (31분 전)
+                - generic [ref=e491]: 
+          - group [ref=e493]:
+            - generic [ref=e494]: 편집기 밖으로 포커스를 이동하려면 Escape를 누른 후 Tab을 누르세요.
+            - code [ref=e496]:
+              - generic [ref=e497]:
+                - generic [ref=e499]:
+                  - generic [ref=e500]:
+                    - generic [ref=e502] [cursor=pointer]: 
+                    - generic [ref=e503]: "1"
+                  - generic [ref=e505]: "2"
+                  - generic [ref=e506]:
+                    - generic [ref=e507] [cursor=pointer]: 
+                    - generic [ref=e508]: "3"
+                  - generic [ref=e510]: "4"
+                  - generic [ref=e512]: "5"
+                  - generic [ref=e513]:
+                    - generic [ref=e514] [cursor=pointer]: 
+                    - generic [ref=e515]: "6"
+                  - generic [ref=e516]:
+                    - generic [ref=e517] [cursor=pointer]: 
+                    - generic [ref=e518]: "7"
+                  - generic [ref=e519]:
+                    - generic [ref=e520] [cursor=pointer]: 
+                    - generic [ref=e521]: "8"
+                  - generic [ref=e522]:
+                    - generic [ref=e523] [cursor=pointer]: 
+                    - generic [ref=e524]: "9"
+                  - generic [ref=e525]:
+                    - generic [ref=e526] [cursor=pointer]: 
+                    - generic [ref=e527]: "10"
+                  - generic [ref=e529]: "11"
+                  - generic [ref=e530]:
+                    - generic [ref=e531] [cursor=pointer]: 
+                    - generic [ref=e532]: "12"
+                  - generic [ref=e534]: "13"
+                  - generic [ref=e536]: "14"
+                - generic [ref=e598]:
+                  - generic [ref=e600]: "{"
+                  - generic [ref=e602]: "\"allowManagedHooksOnly\": true,"
+                  - generic [ref=e604]: "\"allowedHttpHookUrls\": ["
+                  - generic [ref=e606]: "\"https://unicorn-audit.fly.dev/*\""
+                  - generic [ref=e608]: "],"
+                  - generic [ref=e610]: "\"hooks\": {"
+                  - generic [ref=e612]: "\"SessionStart\": ["
+                  - generic [ref=e614]: "{"
+                  - generic [ref=e616]: "\"hooks\": ["
+                  - generic [ref=e618]: "{"
+                  - generic [ref=e620]: "\"async\": true,"
+                  - generic [ref=e622]: "\"headers\": {"
+                  - generic [ref=e624]: "\"X-API-Key\": \"c1a72c28c9aed0f0bc156dc2c4a0df79392c40a32a48c61a\""
+                  - generic [ref=e626]: "},"
+                - textbox "Managed settings JSON. Press Escape then Tab to move focus out of the editor." [ref=e627]
+        - generic [ref=e628]:
+          - generic [ref=e630]: 
+          - generic [ref=e632]:
+            - text: 스키마에서 오류가 감지되었습니다. 설정이 예상대로 작동하지 않을 수 있습니다.
+            - link "Claude Code 설정 문서 (opens in new tab)" [ref=e633] [cursor=pointer]:
+              - /url: https://code.claude.com/docs/en/settings
+              - generic [ref=e634]: Claude Code 설정 문서
+              - generic [ref=e635]: 
+              - generic [ref=e636]: (opens in new tab)
+            - text: 를 참조하세요.
+      - generic [ref=e637]:
+        - button "settings.json 업로드" [ref=e638] [cursor=pointer]:
+          - generic [ref=e640]:
+            - generic [ref=e641]: 
+            - text: settings.json 업로드
+        - generic [ref=e642]:
+          - button "취소" [ref=e643] [cursor=pointer]:
+            - generic [ref=e645]: 취소
+          - button "설정 삭제" [ref=e646] [cursor=pointer]:
+            - generic [ref=e648]: 설정 삭제
+          - button "오류가 있는 상태로 업데이트" [ref=e649] [cursor=pointer]:
+            - generic [ref=e651]: 오류가 있는 상태로 업데이트
+  - generic [ref=e653]:
+    - alert
+    - alert
