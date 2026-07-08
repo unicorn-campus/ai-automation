@@ -1,0 +1,5 @@
+[     385ms] [INFO] [O11Y] [DatadogRUM] Initialized {service: claude-ai, env: production, version: 827f730b88} @ https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ccc72bfa9-DlCv3JG0.js:1
+[     826ms] [LOG] recaptchacompat disabled @ https://js.hcaptcha.com/1/api.js?render=explicit&recaptchacompat=off&onload=__antClientAttestationHcaptchaInvisibleReady:3
+[    4711ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://claude.ai/v1/privacy-consents?prefix=cookies.:0
+[    8973ms] [INFO] [O11Y] [DatadogRUM] Initialized {service: claude-ai, env: production, version: 827f730b88} @ https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ccc72bfa9-DlCv3JG0.js:1
+[    9082ms] [WARNING] Deprecated API for given entry type. @ https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ccc72bfa9-DlCv3JG0.js:2

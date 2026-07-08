@@ -1,0 +1,8 @@
+[      73ms] [ERROR] TypeError: Failed to fetch
+    at a (https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ccc72bfa9-DlCv3JG0.js:2:25469)
+    at h_ (https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ccc72bfa9-DlCv3JG0.js:2:265237)
+    at d (https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ccc72bfa9-DlCv3JG0.js:3:54076)
+    at Array.map (<anonymous>)
+    at s (https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ccc72bfa9-DlCv3JG0.js:3:54510)
+    at https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ccc72bfa9-DlCv3JG0.js:3:54618 @ https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ccc72bfa9-DlCv3JG0.js:1
+[     937ms] [INFO] [O11Y] [DatadogRUM] Initialized {service: claude-ai, env: production, version: 827f730b88} @ https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ccc72bfa9-DlCv3JG0.js:1

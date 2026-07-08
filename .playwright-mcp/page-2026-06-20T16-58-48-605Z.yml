@@ -1,0 +1,76 @@
+- generic [ref=e3]:
+  - generic [ref=e6]:
+    - navigation "Sidebar" [ref=e8]:
+      - generic [ref=e9]:
+        - generic:
+          - link "Home":
+            - /url: /new
+            - img "Claude"
+        - button "Open sidebar" [ref=e11] [cursor=pointer]:
+          - generic [ref=e14]:
+            - generic [ref=e15]: 
+            - generic [ref=e16]: 
+      - generic [ref=e17]:
+        - link "New chat" [ref=e21] [cursor=pointer]:
+          - /url: /new
+          - generic [ref=e22]:
+            - generic [ref=e26]: 
+            - generic:
+              - generic: New chat
+        - generic [ref=e27]:
+          - generic [ref=e28]:
+            - link "Chats" [ref=e30] [cursor=pointer]:
+              - /url: /recents
+              - generic:
+                - generic [ref=e32]: 
+                - generic:
+                  - generic: Chats
+            - link "Projects" [ref=e34] [cursor=pointer]:
+              - /url: /projects
+              - generic:
+                - generic [ref=e36]: 
+                - generic:
+                  - generic: Projects
+            - link "Artifacts" [ref=e39] [cursor=pointer]:
+              - /url: /artifacts
+              - generic:
+                - generic [ref=e41]: 
+                - generic:
+                  - generic: Artifacts
+            - link "Customize" [ref=e43] [cursor=pointer]:
+              - /url: /customize
+              - generic:
+                - generic [ref=e45]: 
+                - generic:
+                  - generic: Customize
+          - generic [ref=e46]:
+            - generic [ref=e47]:
+              - generic:
+                - heading [level=2]:
+                  - button [expanded]:
+                    - generic: 
+            - list [ref=e48]:
+              - listitem [ref=e49]:
+                - link "Code" [ref=e51] [cursor=pointer]:
+                  - /url: /code
+                  - generic [ref=e54]: 
+              - listitem [ref=e55]:
+                - link "Design" [ref=e58] [cursor=pointer]:
+                  - /url: /design
+                  - generic [ref=e61]: 
+          - paragraph [ref=e66]: Your chats will show up here
+        - link "Get apps and extensions" [ref=e71] [cursor=pointer]:
+          - /url: /downloads
+          - generic [ref=e74]: 
+        - button "Settings" [ref=e77] [cursor=pointer]:
+          - generic [ref=e79]:
+            - generic [ref=e81]: H
+            - img [ref=e83]
+          - generic:
+            - generic [ref=e85]:
+              - generic: unicorn
+            - img [ref=e87]
+    - status [ref=e92]:
+      - generic [ref=e93]: Loading...
+  - region "Notifications (F8)":
+    - list

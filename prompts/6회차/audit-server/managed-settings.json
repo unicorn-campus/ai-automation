@@ -1,7 +1,19 @@
 {
-  "_comment": "Claude Code Enterprise Managed Settings — unicorn-audit.fly.dev 감사 로그 훅",
+  "_comment": "Claude Code Enterprise Managed Settings — unicorn-audit.fly.dev 감사 로그 훅 + OTel 토큰 모니터링",
   "_deploy": "Claude.ai 관리자 콘솔 > 조직 설정 > Claude Code > 관리형 설정(settings.json) > 관리 버튼",
   "_security": "API 키를 headers에 직접 포함 — 환경변수 불필요. 관리자 콘솔 서버 사이드 저장으로 사용자 접근 불가",
+
+  "env": {
+    "_comment_env": "OTEL env vars — 관리형 설정 최우선 적용, 사용자 재정의 불가",
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "1",
+    "OTEL_METRICS_EXPORTER": "otlp",
+    "OTEL_LOGS_EXPORTER": "otlp",
+    "OTEL_EXPORTER_OTLP_PROTOCOL": "http/json",
+    "OTEL_EXPORTER_OTLP_ENDPOINT": "https://unicorn-audit.fly.dev",
+    "OTEL_EXPORTER_OTLP_HEADERS": "X-API-Key=c1a72c28c9aed0f0bc156dc2c4a0df79392c40a32a48c61a",
+    "OTEL_METRIC_EXPORT_INTERVAL": "60000",
+    "OTEL_SERVICE_NAME": "claude-code"
+  },
 
   "hooks": {
     "UserPromptSubmit": [
