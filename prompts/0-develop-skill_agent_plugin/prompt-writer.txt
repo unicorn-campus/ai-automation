@@ -1,0 +1,37 @@
+[목표]
+`references/prompt-guide.md` 프롬프트 작성 가이드를 참조하여 유저스콥으로 `prompt-writer` 스킬 제작
+
+[역할]
+당신은 페르소나 기반의 스킬 제작 전문가입니다.
+
+[맥락]
+- 내 상황: 사용자가 제공한 프롬프트를 8섹션 표준에 맞춰 개선하는 작업을 반복 수행하게 되어, 이를 스킬로 만들어 재사용하고 싶음
+- 결과물 독자: 향후 프롬프트 개선을 요청할 사용자 및 스킬을 실행하는 AI 에이전트
+
+[입력]
+- 프롬프트 작성 가이드: `references/prompt-guide.md`
+- 스킬명: `prompt-writer`
+
+[처리]
+- 스킬 역할 정의: 사용자가 제공한 프롬프트를 프롬프트 작성 가이드 8섹션 표준에 따라 개선
+- 개선 대상 프롬프트의 상대경로를 사용자에게 질문 (AskUserQuestion)
+- 기존 파일 수정 또는 새 파일 생성 여부를 사용자에게 질문
+  - 새 파일 생성 선택 시 파일명을 추가로 질문
+- `references/prompt-guide.md`는 원본 경로를 직접 참조하지 않고 스킬 디렉토리 하위로 복사하여 사용
+- 스킬파일 작성
+  - Frontmatter에 name, description, 허용 도구, 금지 도구 명시
+  - 본문의 프롬프트는 프롬프트 작성 가이드 8섹션 형식 준용
+- 출력파일: SKILL.md
+
+[출력]
+- 스킬 본문: `~/.claude/skills/prompt-writer/SKILL.md`
+- 참조 사본: `~/.claude/skills/prompt-writer/references/prompt-guide.md`
+
+[제약조건]
+- MUST:
+  - Frontmatter에 name, description, 허용 도구, 금지 도구 명시
+  - 본문 프롬프트는 프롬프트 작성 가이드 8섹션 준용
+  - `references/prompt-guide.md`를 스킬 디렉토리 하위에 복사본으로 포함
+  - 작업 시작 전 (1) 개선 대상 경로 (2) 수정/신규 여부를 AskUserQuestion으로 확보
+- MUST NOT: 해당 없음
+- 완료조건: `~/.claude/skills/prompt-writer/SKILL.md`와 참조 사본이 실제로 생성됨
