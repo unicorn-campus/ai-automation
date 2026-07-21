@@ -13,12 +13,12 @@
 - 프롬프트의 내용을 이해 
 - 스킬파일 작성 
   - 허용 도구, 금지 도구를 정의 
-  - 본문의 프롬프트는 프롬프트 작성 가이드를 준용  
+  - 본문의 프롬프트는 'prompt-enhancer' 스킬을 이용하여 개선 
 [출력]
 - 스킬: `.claude/skills/{skill-name}/SKILL.md` 
 [제약조건]
 - MUST: 
   - Frontmatter에 name, description, 허용도구, 금지 도구 명시 
-  - 본문의 프롬프트는 프롬프트 작성 가이드 준용 
 - MUST NOT 
 - 완료조건: 스킬파일 생성 
+
