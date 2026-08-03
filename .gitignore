@@ -1,0 +1,6 @@
+# MCP 서버 로컬 환경 파일 (버전관리 제외)
+mcp-servers/**/.env
+mcp-servers/**/.history.json
+mcp-servers/**/images/
+mcp-servers/**/.venv/
+mcp-servers/**/__pycache__/
