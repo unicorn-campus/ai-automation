@@ -1,0 +1,295 @@
+==== v2.0.0 ====
+# MCP Python SDK v2 Stable Release
+
+This is v2.0.0, the stable v2 release of the MCP Python SDK. It supports the 2026-07-28 revision of the Model Context Protocol and serves every earlier revision from the same server. `pip install mcp` now installs 2.x.
+
+```bash
+pip install "mcp[cli]"
+# or
+uv add "mcp[cli]"
+```
+
+### Documentation Rewrite
+
+The [documentation](https://py.sdk.modelcontextprotocol.io/) has the full tutorial and API reference. Coming from v1? [What's new in v2](https://py.sdk.modelcontextprotocol.io/whats-new/) is the tour of what changed and why, and the [migration guide](https://py.sdk.modelcontextprotocol.io/migration/) lists every breaking change with before-and-after code.
+
+### V1 Maintenance mode
+
+**v1.x is in maintenance mode and will only receive security fixes from now on** The 1.x line lives on the [`v1.x` branch](https://github.com/modelcontextprotocol/python-sdk/tree/v1.x), continues to receive critical bug fixes and security patches, and is documented at https://py.sdk.modelcontextprotocol.io/v1/. If your project is not ready to migrate, keep a `<2` upper bound on your requirement (for example `mcp>=1.28,<2`).
+
+## Highlights
+
+### One SDK, both protocol eras
+
+v2 speaks the 2026-07-28 revision (stateless requests with no handshake, `server/discover`, `subscriptions/listen`, multi-round-trip requests) and still serves every 2025-era client from the same `MCPServer`, over Streamable HTTP and stdio, with nothing to configure. `Client(target)` negotiates the version automatically.
+
+### `FastMCP` is now `MCPServer`, and there is a first-class `Client`
+
+The decorator API is unchanged; the low-level `Server` is rebuilt around a shared dispatcher engine, and one `Client` object replaces v1's transport-plus-`ClientSession`-plus-`initialize()` layering. It connects to a URL, a stdio subprocess, a custom transport, or straight to a server object in memory for tests.
+
+### Multi-round-trip requests and resolver dependency injection
+
+At 2026-07-28 the server can no longer call the client, so tools return the question instead. A `Resolve(fn)` parameter is filled by your function invisibly to the model and can put a question to the user; one tool body serves both eras.
+
+### Extension APIs, OpenTelemetry, and a standalone types package
+
+Servers and clients compose protocol extensions through pluggable extension APIs (MCP Apps built in); OpenTelemetry tracing ships on by default; every protocol type is its own package, `mcp-types` (imported as `mcp_types`), published in lock-step with `mcp`.
+
+### Hardened stdio and auth
+
+stdio servers keep handler subprocesses and stray prints off the wire, and stdout is diverted to stderr while serving. OAuth adds RFC 9207 issuer validation, the SEP-990 identity-assertion flow, and the client-credentials extension.
+
+## Coming from a v2 pre-release
+
+Since the last release candidate: the per-version wire packages are private (`mcp_types._v*`), `mcp.types` is a permanent alias for `mcp_types`, the auth registration request model is split from the registered-client record, cancelled requests are no longer answered, and log notifications are gated on the per-request log-level opt-in at 2026-07-28. Since the betas: `Client(cache=False)` is now `cache=None` with `CacheConfig()` the default; `Context.client_id`, `RFC7523OAuthClientProvider`, and `OAuthClientProvider(timeout=)` are removed; the client-credentials providers take `scope=`; `message_handler` receives notifications and exceptions only; `FileResource(is_binary=)` becomes `encoding`; `MCP_*` env vars are gone with `pydantic-settings`; Streamable HTTP servers reject bodies over 4 MiB with HTTP 413. The migration guide covers all of it.
+
+## Known gaps
+
+The tasks extension (SEP-2663) is not part of this release. On the client, the DPoP proof binding (SEP-1932) and the workload-identity `jwt-bearer` grant are not implemented; both are additive and can land in 2.x.
+
+## Feedback
+
+Something rough, confusing, or broken? [Open an issue](https://github.com/modelcontextprotocol/python-sdk/issues/new/choose) or find us in [#python-sdk-dev on the MCP Contributors Discord](https://discord.gg/6CSzBmMkjX).
+
+**Full Changelog**: https://github.com/modelcontextprotocol/python-sdk/compare/v2.0.0rc1...v2.0.0
+
+==== v2.0.0rc1 ====
+First v2 release candidate. Pre-releases are opt-in only; `pip install mcp` still resolves to the stable 1.x line.
+
+```bash
+pip install mcp==2.0.0rc1
+# or
+uv add "mcp==2.0.0rc1"
+```
+
+The [documentation](https://py.sdk.modelcontextprotocol.io/v2/) has the full tutorial and API reference, and the [migration guide](https://py.sdk.modelcontextprotocol.io/v2/migration/) covers coming from v1. Stable v2 is planned for 2026-07-28 alongside the spec release - keep pinning an exact version until then.
+
+## Highlights
+
+### API cleanup ahead of stable (breaking for beta users)
+
+The last pre-release pass over the public surface; every item has a migration guide entry.
+
+- `Client(cache=False)` is now `Client(cache=None)`: `CacheConfig()` is the default and `None` switches the response cache off (#3164).
+- `Context.client_id` is removed - read `_meta` via `ctx.request_context.meta`, or the authenticated client via `get_access_token().client_id` (#3167).
+- `RFC7523OAuthClientProvider` and `JWTParameters` are removed - use `ClientCredentialsOAuthProvider`, `PrivateKeyJWTOAuthProvider`, or `IdentityAssertionOAuthProvider` (#3169).
+- The client-credentials providers take `scope=`, not `scopes=` (#3166).
+- `OAuthClientProvider(timeout=...)` is removed; it never bounded anything (#3165).
+- `message_handler` receives `ServerNotification | Exception` only; the dead `RequestResponder` arm and the `mcp.shared.session` module are gone (#3168).
+- `FileResource(is_binary=...)` is replaced by `encoding: str | None` (#3171).
+- `MCP_*` environment variables never configured `MCPServer` and are no longer advertised; `pydantic-settings` is dropped from the runtime dependencies (#3170).
+- Streamable HTTP servers reject request bodies over 4 MiB with HTTP 413; raise `max_request_body_size` if you accept larger messages (#3095).
+
+### Aligned with the final 2026-07-28 identity shape (#3143)
+
+The request-side `clientInfo` `_meta` key is optional (the required pair is `protocolVersion` + `clientCapabilities`), and `serverInfo` moved out of the `server/discover` result body into every 2026-era result's `_meta`; `client.server_info` is now `Implementation | None`. This tracks spec change [#3002](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/3002) and fixes interop with servers that already omit body `serverInfo`.
+
+### The full 2026-07-28 revision over stdio (#3152)
+
+A stdio (or in-memory) server now decides the protocol era from the client's opening request, so `subscriptions/listen` and every other 2026-07-28 feature serve over stdio, not only Streamable HTTP.
+
+### stdio servers keep handlers off the wire (#3117)
+
+`stdio_server()` serves from private duplicates of stdin/stdout and points fd 0 at the null device and fd 1 at stderr while it runs, so a stray `print()` or a chatty child process can no longer corrupt the JSON-RPC stream. This fixes the classic print-corrupts-the-wire class ([#409](https://github.com/modelcontextprotocol/python-sdk/issues/409)) and the Windows tool-call hang ([#671](https://github.com/modelcontextprotocol/python-sdk/issues/671)).
+
+## Notes
+
+- Tool results validated against an output schema are much faster: the JSON Schema validator is compiled once and cached (#3134).
+- The tasks extension (SEP-2663) is not in this release, and will not be in v2.0.0.
+- If you install under uv's `exclude-newer` cooldown: `mcp` pins `mcp-types` to the exact same version, so exempt both packages - `exclude-newer-package = { mcp = false, mcp-types = false }`.
+
+
+## What's Changed
+* Add Streamable HTTP request body limits by @Kludex in https://github.com/modelcontextprotocol/python-sdk/pull/3095
+* docs: document Windows stdio subprocess stdin handling by @AndreKalberer in https://github.com/modelcontextprotocol/python-sdk/pull/3079
+* docs: make API reference rendering independent of page order by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3107
+* Pin pymdown-extensions back to 11.0 by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3106
+* docs: load media examples from disk instead of inline base64 by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3108
+* Align with spec #3002: optional clientInfo, serverInfo in result _meta by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3143
+* Serve the 2026-07-28 protocol over stdio: decide the era from the opening request by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3152
+* Isolate the stdio server's stdin and stdout from handler subprocesses by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3117
+* Make CacheConfig() the Client cache default and None the off switch by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3164
+* Remove Context.client_id by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3167
+* Rename scopes= to scope= on the client-credentials OAuth providers by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3166
+* Correct stable v2 target date to 2026-07-28 by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3105
+* Remove the deprecated RFC7523OAuthClientProvider by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3169
+* Stop advertising MCP_* env vars for MCPServer settings; drop pydantic-settings by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3170
+* Remove the unused timeout parameter from OAuthClientProvider by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3165
+* Narrow message_handler's parameter to notifications and exceptions by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3168
+* Replace FileResource.is_binary with an encoding field by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3171
+* Cache compiled output-schema validators on ClientSession by @jlowin in https://github.com/modelcontextprotocol/python-sdk/pull/3134
+* Lengthen the demo signing keys in the identity-assertion examples by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3180
+* Repin conformance harness to the published 0.2.0-alpha.10 by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3184
+* Point pre-release install pins at 2.0.0rc1 by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3186
+
+## New Contributors
+* @AndreKalberer made their first contribution in https://github.com/modelcontextprotocol/python-sdk/pull/3079
+
+**Full Changelog**: https://github.com/modelcontextprotocol/python-sdk/compare/v2.0.0b2...v2.0.0rc1
+
+==== v2.0.0b2 ====
+Second v2 beta. Pre-releases are opt-in only; `pip install mcp` still resolves to the stable 1.x line.
+
+```bash
+pip install mcp==2.0.0b2
+# or
+uv add "mcp==2.0.0b2"
+```
+
+The [documentation](https://py.sdk.modelcontextprotocol.io/v2/) has the full tutorial and API reference, and the [migration guide](https://py.sdk.modelcontextprotocol.io/v2/migration/) covers coming from v1. Stable v2 is still targeted for 2026-07-28 alongside the spec release - keep pinning an exact version.
+
+## Highlights
+
+### httpx is replaced by httpx2 (#2972)
+
+The SDK's HTTP stack now runs on [httpx2](https://pypi.org/project/httpx2/) (`>=2.5.0`), the next-generation httpx fork with SSE support built in, replacing `httpx` + `httpx-sse`. Most code needs no changes; if you pass your own `http_client` into a transport, change the import to `httpx2`. Runtime behavior that changes:
+
+- TLS verification uses the operating system trust store (via `truststore`) instead of certifi's bundle. `SSL_CERT_FILE` / `SSL_CERT_DIR` are honored first.
+- Loggers are renamed: `httpx` -> `httpx2`, `httpcore.*` -> `httpcore2.*` - update logging filters that match on those names.
+- SSE GET streams send `Accept: application/json, text/event-stream` (previously exactly `text/event-stream`).
+
+### Client-side subscriptions/listen (#3047)
+
+The client half of `subscriptions/listen` (SEP-2575), promised in the b1 notes: one context manager, `async for` consumption, typed events.
+
+```python
+async with client.listen(tools_list_changed=True, resource_subscriptions=["note://todo"]) as sub:
+    print(sub.honored)  # the subset the server agreed to deliver
+    async for event in sub:
+        match event:
+            case ToolsListChanged():
+                tools = await client.list_tools()
+            case ResourceUpdated(uri=uri):
+                body = await client.read_resource(uri)
+```
+
+Entering waits for the server's acknowledgment, so `sub.honored` is always populated and pre-ack failures raise instead of degrading silently.
+
+### Request cancellation works on the 2026 transports (#3046)
+
+Cancelling or timing out a client request now actually stops it: over streamable HTTP the request's own POST/SSE stream is closed (the spec's cancellation signal), and over stdio the client sends `notifications/cancelled`. Callers can also supply the request id for a call - the seam the listen driver builds on.
+
+### Resolvers can sample and list roots (#3049)
+
+Resolver dependency injection now covers all three multi-round-trip request kinds (SEP-2322): a dependency can return `Sample(...)` or `ListRoots()` in addition to `Elicit(...)`, so a tool can ask the client's LLM or fetch its roots mid-call, on both protocol eras.
+
+## Notes
+
+- Tool-name validation now rejects names with a trailing newline (#3076).
+- The tasks extension is still in review and will ship in a later pre-release.
+- If you install under uv's `exclude-newer` cooldown: `mcp` pins `mcp-types` to the exact same version, so exempt both packages - `exclude-newer-package = { mcp = false, mcp-types = false }`.
+
+## What's Changed
+* De-flake conformance CI: solo re-verification, spawn-storm reduction, result artifacts by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3043
+* Harden the dual-era stream loop's era-lock and rejection semantics by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3040
+* docs: restructure into topical sections and add the four most-asked-for pages by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3044
+* docs: add a "What's new in v2" page by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3054
+* docs: modernize the site theme by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3057
+* docs: restructure the migration guide around topical groups with a navigation layer by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3058
+* Make client-side cancellation work over the 2026 transports by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3046
+* Extend resolver DI to sampling and roots requests by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3049
+* Share one event loop per test module to stop Windows socketpair churn by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3070
+* docs: pin mkdocs<2 and silence the mkdocs-material advisory banner in CI by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3072
+* Add the client-side subscriptions/listen driver by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3047
+* Gate the test matrix and retry setup-uv's flaky manifest fetch by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3080
+* ci: pick the docs-preview toolchain from the PR checkout by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3081
+* docs: replace MkDocs with Zensical by @Kludex in https://github.com/modelcontextprotocol/python-sdk/pull/3073
+* fix: reject trailing newline in tool-name validation by @Otis0408 in https://github.com/modelcontextprotocol/python-sdk/pull/3076
+* Replace httpx and httpx-sse with httpx2 by @Kludex in https://github.com/modelcontextprotocol/python-sdk/pull/2972
+
+## New Contributors
+* @Otis0408 made their first contribution in https://github.com/modelcontextprotocol/python-sdk/pull/3076
+
+**Full Changelog**: https://github.com/modelcontextprotocol/python-sdk/compare/v2.0.0b1...v2.0.0b2
+
+==== v2.0.0b1 ====
+First v2 beta, and the first release with full support for the [2026-07-28 MCP specification](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/). Pre-releases are opt-in only; `pip install mcp` still resolves to the stable 1.x line.
+
+```bash
+pip install mcp==2.0.0b1
+# or
+uv add "mcp==2.0.0b1"
+```
+
+The [documentation](https://py.sdk.modelcontextprotocol.io/v2/) has the full tutorial and API reference, and the [migration guide](https://py.sdk.modelcontextprotocol.io/v2/migration/) covers coming from v1. Beta means the architecture is settled and changes from here should be much smaller than between alphas, but the API can still shift before stable v2, targeted for 2026-07-28 alongside the spec release - keep pinning an exact version.
+
+## What's new in v2
+
+The whole v2 line so far (alphas included), condensed:
+
+- **A new core.** The session-centric v1 internals are replaced by a dispatcher/runner pipeline built for the stateless 2026 protocol: `ServerRunner` is a pure handler kernel, transports are thin drivers over it, and one endpoint serves both protocol eras side by side.
+- **`FastMCP` is now `MCPServer`.** The decorator API stays; the low-level `Server` takes handlers as constructor parameters, fields are snake_case, and traffic is validated against the negotiated spec version on the wire.
+- **A new `Client`.** `Client(target, mode='auto')` speaks every protocol version - it probes `server/discover` and falls back to `initialize` automatically. The target can be a URL, a stdio subprocess, a custom transport, or a server object in memory (great for tests).
+- **Protocol types are a standalone package.** `mcp-types` (imported as `mcp_types`) depends only on `pydantic` and `typing-extensions`, so tooling can speak MCP without the transport stack. Published in lock-step with `mcp`.
+- **Resolver dependency injection.** Tools declare what they need as typed parameters; a resolver can compute the value server-side or ask the user, with questions delivered over elicitation on 2025 sessions and multi-round-trip requests on 2026 sessions.
+- **RFC 6570 URI templates.** Resource templates support the full operator set - query parameters, path segments, explode modifiers - with path-security validation built in.
+- **Extension APIs on both sides.** Servers compose protocol extensions - including MCP Apps - through a pluggable API; clients mirror it with `Client(extensions=[...])`.
+- **Middleware and observability.** Server middleware is `(ctx, call_next)`, and OpenTelemetry tracing ships on by default with GenAI semantic conventions.
+- **Docs rebuilt on tested examples.** Every snippet in the [book](https://py.sdk.modelcontextprotocol.io/v2/) is an executable, CI-tested file, plus a story-style examples suite and llms.txt renditions for agents.
+
+## 2026-07-28 spec support
+
+Client and server:
+
+- **Stateless core**: self-describing requests with no handshake, `server/discover`, scale-out on plain HTTP with no session affinity - progress and log notifications stream within the same single POST exchange.
+- **Multi-round-trip requests**: tools, prompts, and resources can ask for input mid-call; clients auto-resolve through their existing callbacks; on `MCPServer`, `requestState` is sealed by default (authenticated encryption) so clients cannot read or forge it.
+- **Header-based routing and caching**: `Mcp-Method` / `Mcp-Name` / `Mcp-Param-*` headers stamped by the client and validated by the server (SEP-2243), and `ttlMs` / `cacheScope` caching hints stamped by servers and honored by the client-side response cache (SEP-2549).
+- **subscriptions/listen**: served with a pluggable event bus (SEP-2575); the client-side listen driver follows in a later pre-release.
+- **2026-07-28 over stdio (#3038)**: auto-mode clients negotiate the new revision over stdio too - existing alpha clients upgrade with zero code changes.
+- **Enterprise auth**: SEP-990 identity assertion (ID-JAG) for enterprise IdP flows, on top of the OAuth hardening from the alphas (RFC 9207, SEP-837, SEP-2350, SEP-2352).
+- **Spec deprecations**: roots, sampling, and `logging/setLevel` are deprecated per SEP-2577 - advisory warnings only; everything keeps working for sessions on 2025-11-25 or earlier.
+
+v2 passes the official [MCP conformance suite](https://github.com/modelcontextprotocol/conformance), client and server, except the tasks suite: tasks moved to an extension in 2026-07-28, and support is in review to ship in an upcoming pre-release.
+
+## Try it, tell us what breaks
+
+- Coming from v1? Start with the [migration guide](https://py.sdk.modelcontextprotocol.io/v2/migration/). v1.x remains the stable line and keeps getting critical bug fixes and security patches.
+- If your package depends on `mcp`, add a `<2` upper bound now (for example `mcp>=1.27,<2`) so the stable release doesn't surprise your users.
+- Feedback is the most useful thing you can give us during the beta: [open a v2 issue](https://github.com/modelcontextprotocol/python-sdk/issues/new?template=v2-feedback.yaml) or find us in [#python-sdk-dev on the MCP Contributors Discord](https://discord.gg/6CSzBmMkjX).
+
+## What's Changed (since previous alpha)
+
+* Remove comment-on-release workflow by @Kludex in https://github.com/modelcontextprotocol/python-sdk/pull/2985
+* Preserve empty issuer/resource paths on AuthSettings by @Kludex in https://github.com/modelcontextprotocol/python-sdk/pull/2987
+* find_invalid_x_mcp_header: never repr a non-string annotation value by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/2989
+* Add story-style examples suite (27 stories + harness + CI) by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/2957
+* Rebuild the docs around tested examples; shrink README.v2.md to a pitch by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/2978
+* Add .claude/skills/test-quality and reference it from AGENTS.md by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/2993
+* Fix docs/release follow-ups from the mcp-types package split by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/2977
+* Mirror x-mcp-header tool arguments into Mcp-Param-* request headers (SEP-2243) by @Kludex in https://github.com/modelcontextprotocol/python-sdk/pull/2990
+* Switch RFC7523OAuthClientProvider warning to MCPDeprecationWarning by @Kludex in https://github.com/modelcontextprotocol/python-sdk/pull/2996
+* Make OpenTelemetry tracing the single default middleware by @Kludex in https://github.com/modelcontextprotocol/python-sdk/pull/2995
+* Pin conformance harness to main@b18aa918 (merge of #371) via pkg.pr.new by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3000
+* Remove the dispatch-tier middleware hook by @Kludex in https://github.com/modelcontextprotocol/python-sdk/pull/2997
+* Client auto-resolves InputRequiredResult via existing callbacks (SEP-2322) by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/2998
+* Deprecate Server.__init__ handlers for removed capabilities by @Kludex in https://github.com/modelcontextprotocol/python-sdk/pull/3002
+* Support RFC 8693 token exchange for enterprise IdP flows (SEP-990) by @Kludex in https://github.com/modelcontextprotocol/python-sdk/pull/2988
+* Add SSE response mode to the 2026 streamable-HTTP server entry by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3001
+* feat: RFC 6570 URI templates with operator-aware security by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/2356
+* Add docs, tested examples, and a story for SEP-990 identity assertion by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3004
+* Re-vendor 2026-07-28 schema at spec ead35b59 (SubscriptionsListenResult) by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3006
+* Wire SEP-990 enterprise-managed-authorization conformance fixture by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3007
+* Add a pluggable server extension API with MCP Apps by @Kludex in https://github.com/modelcontextprotocol/python-sdk/pull/3003
+* Add resolver dependency injection for MCPServer tools by @Kludex in https://github.com/modelcontextprotocol/python-sdk/pull/2969
+* Promote the v2 README to README.md ahead of the first v2 beta by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3014
+* docs: convert bold cross-references into links, link SEP and RFC mentions by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3017
+* Drive resolver elicitation over the 2026-07-28 input_required flow by @Kludex in https://github.com/modelcontextprotocol/python-sdk/pull/2986
+* Add cache_hints constructor map for SEP-2549 caching hints by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3015
+* Consult request_state only for the question a resolver is asking by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3019
+* Pass InputRequiredResult through the MCPServer prompt and resource pipelines by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3020
+* docs: publish llms.txt and markdown renditions of the docs by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3024
+* Add a client-side response cache honoring SEP-2549 caching hints by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3023
+* Surface skipped conformance scenarios as baselined known failures by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3030
+* Add Cloudflare Pages docs preview with /preview-docs slash command by @localden in https://github.com/modelcontextprotocol/python-sdk/pull/3028
+* Require integrity protection for MRTR requestState by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3032
+* Add a client extension API by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3034
+* Validate Mcp-Param-* headers server-side on the 2026-07-28 HTTP path (SEP-2243) by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3033
+* Serve subscriptions/listen with a pluggable event bus (SEP-2575) by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3035
+* Add v2 feedback issue template by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3037
+* Document pydantic.ValidationError in client Raises sections by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3036
+* Serve the 2026-07-28 era over stdio and other stream-pair transports by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3038
+* Point pre-release install pins at 2.0.0b1 by @maxisbey in https://github.com/modelcontextprotocol/python-sdk/pull/3039
+
+
+**Full Changelog**: https://github.com/modelcontextprotocol/python-sdk/compare/v2.0.0a3...v2.0.0b1
+

@@ -9,7 +9,7 @@ from datetime import datetime
 from pathlib import Path
 
 from dotenv import load_dotenv, set_key
-from mcp.server.fastmcp import FastMCP
+from mcp.server import MCPServer
 from openai import AuthenticationError, BadRequestError, OpenAI, OpenAIError
 
 # ---------------------------------------------------------------------------
@@ -31,7 +31,8 @@ MAX_HISTORY = 100
 MAX_RECENT_LIST = 20
 API_KEY_HELP_URL = "https://platform.openai.com/api-keys"
 
-mcp = FastMCP("gpt-image-mcp")
+# mcp>=2.0.0 (2026-07-28 스펙): FastMCP는 MCPServer로 이름이 변경됨. 데코레이터 API는 동일.
+mcp = MCPServer("gpt-image-mcp")
 
 
 # ---------------------------------------------------------------------------

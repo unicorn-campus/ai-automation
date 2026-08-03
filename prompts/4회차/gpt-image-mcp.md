@@ -25,6 +25,9 @@ MCP 플러그인 서버(Claude Code에 기능을 추가하는 확장 프로그�
     - 여러 이미지를 참고해 새 이미지 합성하기 (gpt-image-2 신기능)
 - API 키(OpenAI 접속 비밀번호): `~/.claude/secrets/.env` 파일의 `OPENAI_API_KEY` 값
 - 개발 언어: Python
+- MCP 서버 개발 SDK: Python `mcp` 패키지 `>=2.0.0` (2026-07-28 프로토콜 스펙 지원)  
+  - v2에서 `FastMCP`는 `MCPServer`로 이름 변경됨 (`from mcp.server import MCPServer`)  
+  - `@mcp.tool()`/`@mcp.resource()`/`@mcp.prompt()` 데코레이터와 `mcp.run(transport="stdio")` 실행 방식은 v1과 동일
 
 [작업방법]
 1. API 키 준비
@@ -38,6 +41,7 @@ MCP 플러그인 서버(Claude Code에 기능을 추가하는 확장 프로그�
 2. 최신 모델 확인: 공식 사이트 검색해서 `gpt-image-2`보다 더 최신 GPT Image 모델이 있으면 그 모델 사용, 없으면 `gpt-image-2` 고정
 
 3. MCP 서버 만들기 — `~/mcp-servers/gpt-images/server.py`
+   - MCP SDK: `mcp[cli]>=2.0.0` (`MCPServer` 클래스 사용)
    - 통신 방식: STDIO 
    - 서버 이름: `gpt-image-mcp`
 
@@ -82,7 +86,8 @@ MCP 플러그인 서버(Claude Code에 기능을 추가하는 확장 프로그�
   - context7 mcp 사용
   - `~/.claude/secrets/.env`에서 `OPENAI_API_KEY` 읽기  
     (없으면 사용자에게 안내 후 직접 받아 파일에 저장)
-  - STDIO 방식으로만 통신 구현 (`stdio_server()`)
+  - `mcp[cli]>=2.0.0` 사용 (`MCPServer` 클래스, `mcp.run(transport="stdio")`)
+  - STDIO 방식으로만 통신 구현
   - `gpt-image-2` 이상 최신 모델 사용 (먼저 검색·확인 후 결정)
   - 이미지 저장 폴더 없으면 자동으로 생성
   - 설치 후 실제 이미지 생성 테스트까지 완료 (파일 존재 증거 확인)

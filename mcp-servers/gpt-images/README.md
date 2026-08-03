@@ -5,6 +5,10 @@ OpenAI GPT Image 모델(`gpt-image-2`)을 이용해 Claude Code 대화 중 바�
 "반도체 회로 그림 만들어줘", "이 이미지 배경 흰색으로 바꿔줘" 같은 요청을 대화 중에 하면 별도의
 앱이나 웹사이트 없이 로컬 파일로 이미지가 저장됨.
 
+MCP Python SDK `mcp>=2.0.0`(2026-07-28 프로토콜 스펙) 기반으로 구현됨. `FastMCP`는 v2에서
+`MCPServer`로 이름이 변경되었으나 `@mcp.tool()`/`@mcp.resource()`/`@mcp.prompt()` 데코레이터
+API와 `mcp.run(transport="stdio")` 실행 방식은 동일함.
+
 ## 주요 기능
 
 - **텍스트 → 이미지 생성**: 설명만으로 새 이미지 생성
@@ -93,3 +97,12 @@ claude mcp add gpt-image-mcp -- "C:\Users\hiond\workspace\patent-bot\gpt-images\
 - `edit_image`로 위 이미지의 배경색 변경 → 파일 저장 확인 완료
 - 잘못된 API 키로 호출 시 한국어 오류 메시지 반환 확인 완료
 - `.env` 미존재 시 한국어 안내 메시지 반환 확인 완료
+
+### mcp>=2.0.0 마이그레이션 검증 (2026-08-04)
+
+- `mcp[cli]==2.0.0` 설치 후 `from mcp.server.fastmcp import FastMCP` → `from mcp.server import MCPServer`로 변경
+- `mcp.Client(server.mcp)` in-memory 클라이언트로 프로토콜 계층 검증
+  - `list_tools`/`list_resources`/`list_prompts` 정상 응답 확인
+  - `.env` 임시 비움 → `generate_image` 호출 시 한국어 "API 키" 안내 메시지 반환 확인
+  - `.env` 원복 후 `generate_image` 실제 호출 → OpenAI API `200 OK` 응답, PNG 파일(1024x1024) 저장,
+    `.history.json` 기록 확인 완료
