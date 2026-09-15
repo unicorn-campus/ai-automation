@@ -4,3 +4,4 @@ mcp-servers/**/.history.json
 mcp-servers/**/images/
 mcp-servers/**/.venv/
 mcp-servers/**/__pycache__/
+mcp-servers/**/.env.bak-*
